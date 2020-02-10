@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  Demo.cpp
 //  Iterable
 //
 //  Created by Adam Lev-Ari on 09/02/2020.
@@ -9,7 +9,6 @@
 #include <iostream>
 
 #include "Cycle.h"
-#include "chain.hpp"
 #include "Accumulate.h"
 #include "zip_longest.h"
 #include "output.h"
