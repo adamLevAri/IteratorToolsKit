@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
     
     
     cout << endl << endl << "Accumulate of numbers: " << endl;
-    for (auto i: Accumulate<vector<int>>(Cycle<vector<int>>(vecInit,5)))
+    for (auto i: Accumulate<vector<int>>(vecInit))
         cout << i << " ";    // 1 3 6 10
     
     
