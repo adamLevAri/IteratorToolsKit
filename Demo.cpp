@@ -40,13 +40,6 @@ int main(int argc, const char * argv[]) {
         cout << i;    // 1234 1234 1234 ...
     cout << endl << endl;
     
-    cout << endl << "Finite<limit: 5 times> Cycle of string: " << endl;
-    for (auto i: Cycle<string>("Hello",5))
-        cout << i;    // Hello Hello Hello ...
-    cout << endl << endl;
-     
-    
-    
     cout << "####  Accumulate:  ####";
     cout << endl << "Accumulate of vector<string>: " << endl;
     for (auto i: Accumulate<vector<string>>(vecString) )
