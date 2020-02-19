@@ -38,6 +38,7 @@ namespace itertools {
                     
                     if (ItNext == ItEnd) {
                         It = ItEnd;
+                        return *this;
                     }
                     ++ItNext;
                     return *this;
