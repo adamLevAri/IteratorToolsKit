@@ -22,17 +22,18 @@ std::ostream& operator<<(std::ostream& out, const std::pair<T1,T2>& pair) {
 
 template<class T>
 std::ostream& operator<<(std::ostream& out, const std::set<T>& subset) {
-    out << "{";
-    bool first=true;
-    for (T val: subset) {
-       
-            if (!first) out << ",";
-            first=false;
-            out << val;
-       
+    if (!subset.empty()){
+        out << "{";
+        bool first=true;
+        for (T val: subset) {
+           
+                if (!first) out << ",";
+                first=false;
+                out << val;
+           
+        }
+        out << "}\n";
     }
-    out << "}\n";
     return out;
-}
 
 #endif /* output_h */
