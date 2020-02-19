@@ -1,6 +1,6 @@
 #!make -f
 
-CFLAGS=-stdlib=libc++ -std=c++17
+CFLAGS=-stdlib=libc++ -std=c++11
 
 demo:  Demo.o
 	g++ $(CFLAGS) $^ -o demo
