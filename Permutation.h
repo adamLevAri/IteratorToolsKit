@@ -42,6 +42,8 @@ namespace itertools {
             bool firstIteration = true;
             uint i,j;
             
+            iterator(IT It, uint size, T value): It(It), valLength(size), val(value) {}
+            
             set<string> operator*() {
                 set<string> result;
                 uint tempval [valLength];
