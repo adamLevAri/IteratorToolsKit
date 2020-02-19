@@ -18,12 +18,14 @@ namespace itertools {
         struct Accumulate {
             Accumulate(const T& val): val(val) { }
             const T val;
-            
+            typedef decltype(val.begin()) IT;
             
             struct iterator{
-                decltype(val.begin()) It, ItNext, ItEnd;
+                IT It, ItNext, ItEnd;
                 T Container;
                 int index = 0;
+                
+                iterator(IT It, IT ItNext, IT ItEnd, T Container): It(It), ItNext(ItNext), ItEnd(ItEnd), Container(Container) {}
                 
                 decltype(*val.begin()) operator*() {
                     
