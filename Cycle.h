@@ -19,11 +19,11 @@ namespace itertools {
         struct Cycle {
             Cycle(const T& val, const int numOfIterate): val(val), numOfIterate(numOfIterate){ }
             const T val;
-            int numOfIterate;
+            int numOfIterate = 0;
             
             struct iterator {
                 decltype(val.begin()) It, ItEnd, ItStart;
-                int numOfIterate;
+                int numOfIterate = 0;
                 
                 decltype(*val.begin()) operator*() {
                     return *It;
