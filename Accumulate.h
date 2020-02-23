@@ -33,13 +33,12 @@ namespace itertools {
                 }
                 
                 iterator& operator++() {
-                    Container[index] += *ItNext;
-                    ++It;
-                    
                     if (ItNext == ItEnd) {
                         It = ItEnd;
                         return *this;
                     }
+                    Container[index] += *ItNext;
+                    ++It;
                     ++ItNext;
                     return *this;
                 }
