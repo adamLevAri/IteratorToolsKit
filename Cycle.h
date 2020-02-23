@@ -9,7 +9,7 @@
 #ifndef Cycle_h
 #define Cycle_h
 
-#include <stdio.h>
+#include <iostream>
 
 using namespace std;
 
