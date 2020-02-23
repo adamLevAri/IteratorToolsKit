@@ -25,7 +25,7 @@ namespace itertools {
         typedef decltype(val.begin()) IT;
         
         IT It;
-        uint SIZE;
+        uint SIZE = 0;
 
         Permutation(const T& val, uint size = 0): val(val), SIZE(size) {
             if (size == 0){
