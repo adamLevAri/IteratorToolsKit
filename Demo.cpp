@@ -66,7 +66,7 @@ int main(int argc, const char * argv[]) {
     
     
     cout << "####  Permutation:  ####";
-    cout << endl << "Permutation of string: 'ABCD'" << endl;
+    cout << endl << "Permutation of vector:{1,2,3,4}" << endl;
     for (auto i: Permutation(vecInit) )
         cout << i;
     cout << endl << endl;
