@@ -40,7 +40,6 @@ namespace itertools {
             struct iterator{
                 decltype(val.begin()) It, ItEnd;
                 const predicate_type pred;
-                value_type val;
                 
                 
                 iterator(IT It, IT ItEnd,const predicate_type func): It(It), ItEnd(ItEnd), pred(func) {}
