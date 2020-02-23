@@ -26,14 +26,6 @@ struct lessThan
     bool operator()(T& i) const { return i < 3; }
 };
 
-template<typename Iterable>
-string iterable_to_string(const Iterable& iterable) {
-    ostringstream ostr;
-    for (auto i: iterable)
-        ostr << i << ",";
-    return ostr.str();
-}
-
 int main(int argc, const char * argv[]) {
     
     vector<int> vecInit = {1,2,3,4};
