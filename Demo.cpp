@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
     
     cout << "####  Filter False:  ####";
     cout << endl << "Filter all Even numbers of vector{1,2,3,4}: " << endl;
-    for (auto i: Filter_False<vector<int>, lessThan>(vecInit, Even()) )
+    for (auto i: Filter_False<vector<int>, lessThan>(vecInit, lessThan()) )
     cout << i << " ";
     cout << endl << endl;
 
