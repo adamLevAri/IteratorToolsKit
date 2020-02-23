@@ -8,7 +8,7 @@
 
 #ifndef Accumulate_h
 #define Accumulate_h
-#include <stdio.h>
+#include <iostream>
 #include <sstream>
 
 using namespace std;
