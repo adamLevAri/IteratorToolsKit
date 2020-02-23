@@ -26,6 +26,14 @@ struct lessThan
     bool operator()(T& i) const { return i < 3; }
 };
 
+template<typename Iterable>
+string iterable_to_string(const Iterable& iterable) {
+    ostringstream ostr;
+    for (auto i: iterable)
+        ostr << i << ",";
+    return ostr.str();
+}
+
 int main(int argc, const char * argv[]) {
     
     vector<int> vecInit = {1,2,3,4};
@@ -36,33 +44,45 @@ int main(int argc, const char * argv[]) {
     //Defined a final int for output
     cout << "####  Cycle:  ####" << endl;
     cout << "Finite<limit: 5 times> Cycle of numbers vector: " << endl;
-    for (auto i: Cycle<vector<int>>(vecInit,5))
+    for (auto i: Cycle(vecInit,5))
         cout << i;    // 1234 1234 1234 ...
     cout << endl << endl;
     
     cout << "####  Accumulate:  ####";
     cout << endl << "Accumulate of vector<string>: " << endl;
-    for (auto i: Accumulate<vector<string>>(vecString) )
+    for (auto i: Accumulate(vecString) )
+        cout << i << " ";
+    cout << endl << endl;
+    
+    cout << "####  Accumulate & Cycle:  ####";
+    cout << endl << "Cycle of Accumulate of string vector: " << endl;
+    for (auto i: Cycle(Accumulate(vecString),2) )
         cout << i << " ";
     cout << endl << endl;
     
     cout << "####  Zip_Longest:  ####";
     cout << endl << "zip longest of vector<float> & vector<int>: " << endl;
-    for (auto i: Zip_Longest<vector<float>, vector<int>>(vecFloat, vecInit) )
+    for (auto i: Zip_Longest(vecFloat, vecInit) )
+        cout << i << " ";
+    cout << endl << endl;
+    
+    cout << "####  Zip_Longest & Cycle:  ####";
+    cout << endl << "zip longest of Cycle<vector:{1,2,3,4}> & Cycle<vector:{-1, 0.3, 5.2, -8.3}>: " << endl;
+    for (auto i: Zip_Longest(Cycle(vecInit,2), Cycle(vecFloat,2)) )
         cout << i << " ";
     cout << endl << endl;
     
     
     cout << "####  Permutation:  ####";
     cout << endl << "Permutation of string: 'ABCD'" << endl;
-    for (auto i: Permutation<string>("ABCD") )
+    for (auto i: Permutation(vecInit) )
         cout << i;
     cout << endl << endl;
     
     
     cout << "####  Filter False:  ####";
     cout << endl << "Filter all numbers less than 3 in vector{1,2,3,4}: " << endl;
-    for (auto i: Filter_False<vector<int>, lessThan>(vecInit, lessThan()) )
+    for (auto i: Filter_False(vecInit, lessThan()) )
     cout << i << " ";
     cout << endl << endl;
 
