@@ -20,7 +20,7 @@ using namespace itertools;
 using namespace std;
 
 
-struct Even
+struct lessThan
 {
     template<typename T>
     bool operator()(T& i) const { return i < 3; }
@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
     
     cout << "####  Filter False:  ####";
     cout << endl << "Filter all Even numbers of vector{1,2,3,4}: " << endl;
-    for (auto i: Filter_False<vector<int>, Even>(vecInit, Even()) )
+    for (auto i: Filter_False<vector<int>, lessThan>(vecInit, Even()) )
     cout << i << " ";
     cout << endl << endl;
 
