@@ -35,5 +35,5 @@ std::ostream& operator<<(std::ostream& out, const std::set<T>& subset) {
         out << "}\n";
     }
     return out;
-
+}
 #endif /* output_h */
